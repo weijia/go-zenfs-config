@@ -1,0 +1,12 @@
+{
+  "id": "gitee-e2e-st",
+  "type": "Gitee",
+  "options": {
+    "branch": "master",
+    "owner": "weijia432",
+    "repo": "pim-store",
+    "token": "00000000000000000000000000000000"
+  },
+  "description": "st",
+  "createdAt": 1794670738382
+}

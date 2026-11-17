@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "kind": "config",
+  "id": "config",
+  "features": {
+    "tombstones": true,
+    "versions": true,
+    "conflicts": true,
+    "configHost": true,
+    "appData": false
+  }
+}

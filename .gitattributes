@@ -1,0 +1,2 @@
+# Byte-exact fixtures: never apply end-of-line conversion.
+testdata/** -text

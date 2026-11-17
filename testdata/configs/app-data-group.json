@@ -1,0 +1,30 @@
+{
+  "id": "default",
+  "groupType": "data-sync",
+  "backends": [
+    {
+      "id": "gitee-mw06t65y",
+      "type": "Gitee",
+      "options": {
+        "baseUrl": "",
+        "branch": "master",
+        "owner": "weijia432",
+        "repo": "folders",
+        "token": "e43a392a87e6270e8d866b6cea8e3e2d"
+      },
+      "description": "",
+      "createdAt": 1794368415957
+    },
+    {
+      "id": "remotestorage-mvz9hqsa",
+      "type": "RemoteStorage",
+      "options": {
+        "basePath": "/app_data/folders/",
+        "href": "weijia@5apps.com",
+        "token": "f22b31e1ec086667aaf08d226b24fbff"
+      },
+      "description": "",
+      "createdAt": 1793624136979
+    }
+  ]
+}

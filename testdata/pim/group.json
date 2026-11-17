@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "kind": "data",
+  "id": "pim",
+  "name": "PIM",
+  "features": {
+    "tombstones": true,
+    "versions": false,
+    "conflicts": false,
+    "configHost": false,
+    "appData": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "adminPassword": "123456",
+  "isAuthenticated": true,
+  "lastDailyReset": 1793522166597,
+  "lastWeeklyReset": 1784438888083,
+  "notificationsEnabled": true,
+  "theme": "light",
+  "webdavSync": null,
+  "locale": "zh"
+}

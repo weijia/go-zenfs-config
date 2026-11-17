@@ -1,0 +1,11 @@
+{
+  "id": "gitee",
+  "type": "Gitee",
+  "options": {
+    "baseUrl": "",
+    "branch": "master",
+    "owner": "weijia432",
+    "repo": "configs",
+    "token": "00000000000000000000000000000000"
+  }
+}
