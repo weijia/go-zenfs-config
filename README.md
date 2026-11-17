@@ -281,11 +281,14 @@ Token 通过 `-gitee-token` 或环境变量 `GITEE_TOKEN` 传入，不要写进�
 
 ## 在 OpenList 中使用
 
-OpenList 侧的适配层位于 `OpenList/internal/configsync`：
+OpenList 侧的适配层位于 `OpenList/internal/configsync`，依赖本库的已发布版本
+`v0.1.0`（`go.mod` 不再有本地 `replace`）：
 
+- 自动探测组类型：`config-sync` 走镜像 + `/{prefix}/settings/*.json`；
+  `data-sync` 直接通过数据组 API 读写同一批路径，不把数据组镜像到本地；
 - 导出设置：站点、样式、预览、索引、流量五组（`SITE/STYLE/PREVIEW/INDEX/TRAFFIC`），
   自动跳过敏感键；
-- 可选导出存储挂载快照（`storages.json`），**只导出，不自动导入**，避免覆盖本地挂载；
+- 可选导出存储挂载快照（`storages.json`），**只导出，不自动导入**；
 - 启动时拉取远端 `/{appId}` 下的设置并应用，然后把当前状态推回去；
 - 设置变更后 debounce 推送。
 
@@ -303,11 +306,24 @@ OpenList 侧的适配层位于 `OpenList/internal/configsync`：
   "app_id": "openlist",
   "prefix": "/openlist",
   "include_storages": true,
+  "group_type": "auto",
+  "data_group": "",
+  "data_group_name": "OpenList",
+  "app_data": {
+    "enabled": false,
+    "repo": "openlist-data",
+    "branch": "master",
+    "group_id": "default",
+    "name": "OpenList"
+  },
   "push_debounce_seconds": 5
 }
 ```
 
-未创建该文件时功能完全关闭。Token 也可以只放在环境变量 `GITEE_TOKEN` 里。
+- `group_type`：`auto`（默认，按远端标记）/ `config-sync` / `data-sync`；
+- `data_group`：data-sync 组的 id，留空时读 `.meta/group.json`；
+- `app_data`：在 config 组里登记一个数据组，供其他设备发现；
+- 未创建该文件时功能完全关闭。Token 也可以只放在环境变量 `GITEE_TOKEN` 里。
 
 ## 测试
 
